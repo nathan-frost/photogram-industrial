@@ -41,7 +41,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.0]
       t.boolean :private
       t.integer :likes_count, default: 0
       t.integer :comments_count, default: 0
-
+      t.integer :photos_count, :integer, default: 0
       t.timestamps null: false
     end
 
