@@ -23,21 +23,7 @@
 
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-      
         
-          
-          Ask…
-        
-      
-
-      
-        
-          
-
-          Copy
-        
-      
-    
           <li class="nav-item">
             <%= link_to "Edit #{current_user.username}", edit_user_registration_path, class: "nav-link" %>
           </li>
