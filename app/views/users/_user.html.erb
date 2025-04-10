@@ -2,7 +2,7 @@
   <div class="flex-shrink-0 w-25">
     <%= image_tag user.avatar_image_url, class: "me-3 rounded-circle img-cover img-medium" %>
   </div>
-
+ <h1></h1>
   <div class="media-body">
     <div class="d-flex justify-content-between align-items-center">
       <h1 class="mt-0 mb-3 display-4">
@@ -148,7 +148,7 @@
 <%=
   render "users/connected_users_modal",
     user: user,
-    connected_users: user.pending_received_follow_requests,
+    connected_users: user.pending,
     description: "pending",
     target: "#{dom_id(user)}_pending"
 %>
