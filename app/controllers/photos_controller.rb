@@ -8,6 +8,7 @@ class PhotosController < ApplicationController
 
   # GET /photos/1 or /photos/1.json
   def show
+    @photo = Photo.find(params[:id])
   end
 
   # GET /photos/new
@@ -17,12 +18,13 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
+    @photo = Photo.find(params[:id])
   end
 
   # POST /photos or /photos.json
   def create
     @photo = Photo.new(photo_params)
-
+    @photo.owner = current_user
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: "Photo was successfully created." }

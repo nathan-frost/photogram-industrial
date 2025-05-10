@@ -23,5 +23,7 @@ class FollowRequest < ApplicationRecord
   belongs_to :recipient, class_name: "User"
   belongs_to :sender, class_name: "User"
 
+  scope :pending, -> { where(status: 'pending') }
+
   enum :status, { pending: "pending", rejected: "rejected", accepted: "accepted" }
 end
